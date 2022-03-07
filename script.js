@@ -22,6 +22,19 @@ dotButton.addEventListener("click", handleDotClick);
 const deleteButton = document.querySelector("#delete-button");
 deleteButton.addEventListener("click", handleDeleteClick);
 
+window.addEventListener("keyup", handleKeyboardClick);
+// prevent browser from opening quick find
+window.addEventListener("keydown", (e) =>
+  e.key === "/" ? e.preventDefault() : ""
+);
+
+function handleKeyboardClick(e) {
+  const button = document.querySelector(`[data-key="${e.key}"]`);
+  if (button) {
+    button.click();
+  }
+}
+
 function handleDeleteClick(e) {
   if (values.second !== "") {
     values.second = values.second.slice(0, -1);
