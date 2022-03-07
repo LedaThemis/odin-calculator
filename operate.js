@@ -1,6 +1,6 @@
 function operate(op, a, b) {
-  a = parseFloat(a).toFixed(5);
-  b = parseFloat(b).toFixed(5);
+  a = parseNum(a);
+  b = parseNum(b);
   switch (op) {
     case "+":
       return add(a, b);
@@ -14,10 +14,10 @@ function operate(op, a, b) {
 }
 
 // ARITHMETIC FUNCTIONS
-const add = (a, b) => a + b;
-const subtract = (a, b) => a - b;
-const multiply = (a, b) => a * b;
-const divide = (a, b) => a / b;
+const add = (a, b) => parseNum(a + b);
+const subtract = (a, b) => parseNum(a - b);
+const multiply = (a, b) => parseNum(a * b);
+const divide = (a, b) => parseNum(a / b);
 
 export default operate;
 
