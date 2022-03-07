@@ -28,6 +28,16 @@ window.addEventListener("keydown", (e) =>
   e.key === "/" ? e.preventDefault() : ""
 );
 
+const buttons = document.querySelectorAll("button");
+buttons.forEach((button) =>
+  button.addEventListener("click", (e) => {
+    e.target.style.backgroundColor = "#eee";
+    setTimeout(() => {
+      e.target.style.backgroundColor = "";
+    }, 25);
+  })
+);
+
 function handleKeyboardClick(e) {
   const button = document.querySelector(`[data-key="${e.key}"]`);
   if (button) {
