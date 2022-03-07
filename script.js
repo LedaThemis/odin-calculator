@@ -1,3 +1,10 @@
 import operate from "./operate.js";
 
-console.log(operate("+", 1, 1));
+let displayValue = "";
+
+const digits = document.querySelectorAll(".digit");
+digits.forEach((digit) => digit.addEventListener("click", handleDigitClick));
+
+function handleDigitClick(e) {
+  displayValue += e.target.textContent;
+}
