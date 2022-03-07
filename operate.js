@@ -1,4 +1,6 @@
 function operate(op, a, b) {
+  a = parseInt(a);
+  b = parseInt(b);
   switch (op) {
     case "+":
       return add(a, b);
