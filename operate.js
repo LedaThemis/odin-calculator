@@ -23,5 +23,5 @@ export default operate;
 
 // PARSE FUNCTION
 function parseNum(n) {
-  return parseFloat(n).toFixed(5);
+  return parseFloat(parseFloat(n).toFixed(5));
 }
