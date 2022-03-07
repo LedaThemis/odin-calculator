@@ -15,7 +15,7 @@ equalsButton.addEventListener("click", handleEqualsClick);
 
 function handleEqualsClick(e) {
   if (values.first === "" || values.second === "" || values.op === "") return;
-  values.first = `${operate(values.op, values.first, values.second)}`;
+  values.first = calculateCurrentValue(values.op, values.first, values.second);
   values.second = "";
   values.op = "";
   updateDisplay(values);
@@ -24,7 +24,11 @@ function handleEqualsClick(e) {
 function handleOperationClick(e) {
   if (values.first === "") return;
   if (values.first !== "" && values.second !== "") {
-    values.first = `${operate(values.op, values.first, values.second)}`;
+    values.first = calculateCurrentValue(
+      values.op,
+      values.first,
+      values.second
+    );
 
     values.op = e.target.textContent;
     values.second = "";
@@ -48,4 +52,13 @@ function handleDigitClick(e) {
 
 function updateDisplay(v) {
   DISPLAY_TEXT.textContent = v.first + v.op + v.second;
+}
+
+function calculateCurrentValue(op, f, s) {
+  if (parseInt(s) === 0) {
+    alert("No division by zero here, yet.");
+    return f;
+  } else {
+    return `${operate(values.op, values.first, values.second)}`;
+  }
 }
