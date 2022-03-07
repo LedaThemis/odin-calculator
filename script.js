@@ -16,6 +16,20 @@ equalsButton.addEventListener("click", handleEqualsClick);
 const clearButton = document.querySelector("#clear-button");
 clearButton.addEventListener("click", handleClearClick);
 
+const dotButton = document.querySelector("#dot-button");
+dotButton.addEventListener("click", handleDotClick);
+
+function handleDotClick(e) {
+  if (values.op === "") {
+    if (values.first.includes(".")) return;
+    values.first += e.target.textContent;
+  } else {
+    if (values.second.includes(".")) return;
+    values.second += e.target.textContent;
+  }
+  updateDisplay(values);
+}
+
 function handleClearClick(e) {
   values = { first: "", op: "", second: "" };
   updateDisplay(values);
