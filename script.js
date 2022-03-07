@@ -13,6 +13,14 @@ operations.forEach((op) => op.addEventListener("click", handleOperationClick));
 const equalsButton = document.querySelector("#op-eq");
 equalsButton.addEventListener("click", handleEqualsClick);
 
+const clearButton = document.querySelector("#clear-button");
+clearButton.addEventListener("click", handleClearClick);
+
+function handleClearClick(e) {
+  values = { first: "", op: "", second: "" };
+  updateDisplay(values);
+}
+
 function handleEqualsClick(e) {
   if (values.first === "" || values.second === "" || values.op === "") return;
   values.first = calculateCurrentValue(values.op, values.first, values.second);
