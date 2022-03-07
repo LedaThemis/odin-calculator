@@ -51,9 +51,19 @@ function handleOperationClick(e) {
 
 function handleDigitClick(e) {
   if (values.op === "") {
-    values.first += e.target.textContent;
+    if (values.first[0] === "0" && values.first.length === 1) {
+      if (e.target.textContent === "0") return;
+      values.first = e.target.textContent;
+    } else {
+      values.first += e.target.textContent;
+    }
   } else {
-    values.second += e.target.textContent;
+    if (values.second[0] === "0" && values.second.length === 1) {
+      if (e.target.textContent === "0") return;
+      values.second = e.target.textContent;
+    } else {
+      values.second += e.target.textContent;
+    }
   }
   updateDisplay(values);
 }
