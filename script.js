@@ -19,6 +19,20 @@ clearButton.addEventListener("click", handleClearClick);
 const dotButton = document.querySelector("#dot-button");
 dotButton.addEventListener("click", handleDotClick);
 
+const deleteButton = document.querySelector("#delete-button");
+deleteButton.addEventListener("click", handleDeleteClick);
+
+function handleDeleteClick(e) {
+  if (values.second !== "") {
+    values.second = values.second.slice(0, -1);
+  } else if (values.op !== "") {
+    values.op = "";
+  } else {
+    values.first = values.first.slice(0, -1);
+  }
+  updateDisplay(values);
+}
+
 function handleDotClick(e) {
   if (values.op === "") {
     if (values.first.includes(".")) return;
