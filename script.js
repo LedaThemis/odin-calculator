@@ -1,9 +1,6 @@
 import operate from "./operate.js";
 
-let displayValue = { first: "", op: "", second: "" };
-let firstNumber = "";
-let secondNumber = "";
-let currentOp = "";
+let values = { first: "", op: "", second: "" };
 
 const DISPLAY_TEXT = document.querySelector("#display-text");
 
@@ -14,32 +11,28 @@ const operations = document.querySelectorAll(".operation");
 operations.forEach((op) => op.addEventListener("click", handleOperationClick));
 
 function handleOperationClick(e) {
-  if (displayValue.first === "") return;
-  if (displayValue.first !== "" && displayValue.second !== "") {
-    displayValue.first = `${operate(
-      displayValue.op,
-      displayValue.first,
-      displayValue.second
-    )}`;
+  if (values.first === "") return;
+  if (values.first !== "" && values.second !== "") {
+    values.first = `${operate(values.op, values.first, values.second)}`;
 
-    displayValue.op = e.target.textContent;
-    displayValue.second = "";
+    values.op = e.target.textContent;
+    values.second = "";
 
-    updateDisplay(displayValue);
+    updateDisplay(values);
   }
-  if (displayValue.first !== "" && displayValue.second === "") {
-    displayValue.op = e.target.textContent;
-    updateDisplay(displayValue);
+  if (values.first !== "" && values.second === "") {
+    values.op = e.target.textContent;
+    updateDisplay(values);
   }
 }
 
 function handleDigitClick(e) {
-  if (displayValue.op === "") {
-    displayValue.first += e.target.textContent;
+  if (values.op === "") {
+    values.first += e.target.textContent;
   } else {
-    displayValue.second += e.target.textContent;
+    values.second += e.target.textContent;
   }
-  updateDisplay(displayValue);
+  updateDisplay(values);
 }
 
 function updateDisplay(v) {
