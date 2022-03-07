@@ -35,29 +35,34 @@
 </head>
 
 <body>
-    <div id="calculator">
-        <div id="display">
-            <p id="display-text">0</p>
+    <main id="main">
+        <header>
+            <h1>Calculator</h1>
+        </header>
+        <div id="calculator">
+            <div id="display">
+                <p id="display-text">0</p>
+            </div>
+            <button id="clear-button" data-key="Delete" class="controls button-big">CLEAR</button>
+            <button id="delete-button" data-key="Backspace" class="controls button-big">UNDO</button>
+            <button id="dot-button" data-key="." class="controls button">.</button>
+            <button id="digit-0" data-key="0" class="digit button">0</button>
+            <button id="digit-1" data-key="1" class="digit button">1</button>
+            <button id="digit-2" data-key="2" class="digit button">2</button>
+            <button id="digit-3" data-key="3" class="digit button">3</button>
+            <button id="digit-4" data-key="4" class="digit button">4</button>
+            <button id="digit-5" data-key="5" class="digit button">5</button>
+            <button id="digit-6" data-key="6" class="digit button">6</button>
+            <button id="digit-7" data-key="7" class="digit button">7</button>
+            <button id="digit-8" data-key="8" class="digit button">8</button>
+            <button id="digit-9" data-key="9" class="digit button">9</button>
+            <button id="op-add" data-key="+" class="operation button">+</button>
+            <button id="op-sub" data-key="-" class="operation button">-</button>
+            <button id="op-mult" data-key="*" class="operation button">×</button>
+            <button id="op-div" data-key="/" class="operation button">÷</button>
+            <button id="op-eq" data-key="=" class="controls button">=</button>
         </div>
-        <button id="clear-button" data-key="Delete" class="controls button-big">CLEAR</button>
-        <button id="delete-button" data-key="Backspace" class="controls button-big">UNDO</button>
-        <button id="dot-button" data-key="." class="controls button">.</button>
-        <button id="digit-0" data-key="0" class="digit button">0</button>
-        <button id="digit-1" data-key="1" class="digit button">1</button>
-        <button id="digit-2" data-key="2" class="digit button">2</button>
-        <button id="digit-3" data-key="3" class="digit button">3</button>
-        <button id="digit-4" data-key="4" class="digit button">4</button>
-        <button id="digit-5" data-key="5" class="digit button">5</button>
-        <button id="digit-6" data-key="6" class="digit button">6</button>
-        <button id="digit-7" data-key="7" class="digit button">7</button>
-        <button id="digit-8" data-key="8" class="digit button">8</button>
-        <button id="digit-9" data-key="9" class="digit button">9</button>
-        <button id="op-add" data-key="+" class="operation button">+</button>
-        <button id="op-sub" data-key="-" class="operation button">-</button>
-        <button id="op-mult" data-key="*" class="operation button">×</button>
-        <button id="op-div" data-key="/" class="operation button">÷</button>
-        <button id="op-eq" data-key="=" class="controls button">=</button>
-    </div>
+    </main>
 </body>
 
 </html>
