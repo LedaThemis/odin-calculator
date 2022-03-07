@@ -1,6 +1,6 @@
 function operate(op, a, b) {
-  a = parseInt(a);
-  b = parseInt(b);
+  a = parseFloat(a).toFixed(5);
+  b = parseFloat(b).toFixed(5);
   switch (op) {
     case "+":
       return add(a, b);
