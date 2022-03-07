@@ -10,6 +10,17 @@ digits.forEach((digit) => digit.addEventListener("click", handleDigitClick));
 const operations = document.querySelectorAll(".operation");
 operations.forEach((op) => op.addEventListener("click", handleOperationClick));
 
+const equalsButton = document.querySelector("#op-eq");
+equalsButton.addEventListener("click", handleEqualsClick);
+
+function handleEqualsClick(e) {
+  if (values.first === "" || values.second === "" || values.op === "") return;
+  values.first = `${operate(values.op, values.first, values.second)}`;
+  values.second = "";
+  values.op = "";
+  updateDisplay(values);
+}
+
 function handleOperationClick(e) {
   if (values.first === "") return;
   if (values.first !== "" && values.second !== "") {
