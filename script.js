@@ -87,7 +87,7 @@ function updateDisplay(v) {
 }
 
 function calculateCurrentValue(op, f, s) {
-  if (parseInt(s) === 0) {
+  if (parseFloat(s) === 0) {
     alert("No division by zero here, yet.");
     return f;
   } else {
