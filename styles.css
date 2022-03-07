@@ -58,6 +58,7 @@ body {
   justify-content: flex-end;
   align-items: center;
 
+  border: 2px solid black;
   box-sizing: border-box;
   padding: 20px;
 }
