@@ -20,3 +20,8 @@ const multiply = (a, b) => a * b;
 const divide = (a, b) => a / b;
 
 export default operate;
+
+// PARSE FUNCTION
+function parseNum(n) {
+  return parseFloat(n).toFixed(5);
+}
