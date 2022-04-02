@@ -1,4 +1,4 @@
-# [Odin | Calculator](https://ledathemis.github.io/odin-etch-a-sketch)
+# [Odin | Calculator](https://ledathemis.github.io/odin-calculator)
 
 Technologies used:
 
